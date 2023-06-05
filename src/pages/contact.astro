@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact Us!">
+  <section>
+    <p>
+      Do you have a good idea and want to turn it into an app or website?
+      Please contact us below.
+    </p>
+    <form method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+    
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="reason">Reason for Contact</label>
+      <textarea id="reason" name="reason"></textarea>
+    
+      <button type="submit">Submit</button>
+    </form> 
+  </section>
+</Layout>
