@@ -7,6 +7,11 @@ const { title } = Astro.props;
 
 const navItems = [
 	{
+		path: '/services',
+		label: 'Services',
+		logo: '👨🏻‍💻'
+	},
+	{
 		path: '/blog',
 		label: 'Blog',
 		logo: '📑'
@@ -39,7 +44,7 @@ M       M   A     A
 	<body>
 		<div class="content">
 			<header>
-				<nav>{navItems.map((nav) => <a href={nav.path}>{nav.logo}{' '}{nav.label}</a>)}</nav>
+				<nav>{navItems.map((nav) => <a href={nav.path}>{nav.label}{' '}{nav.logo}</a>)}</nav>
 			</header>
 			<slot />
 			<footer>
@@ -54,8 +59,8 @@ M       M   A     A
 </html>
 <style is:global>
 	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--text-color: #adbac7;
+		--background-color: rgb(17 24 39);
 	}
 	* {
 		box-sizing: border-box;
@@ -64,15 +69,14 @@ M       M   A     A
 		margin: 0;
 	}
 	a {
-		text-decoration: none;
-		color: #FFF;
+		color: var(--text-color);
 	}
 	html {
 		font-family: system-ui, sans-serif;
 		font-size: 16px;
-		color: #FFF;
+		color: var(--text-color);
 		height: 100vh;
-		background-color: #002038;
+		background-color: var(--background-color);
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
@@ -95,6 +99,7 @@ M       M   A     A
 	}
 	footer {
 		border-top: 1px solid white;
+		margin-top: 5rem;
 		grid-column: 1 / 3;
 	}
 </style>
