@@ -4,6 +4,10 @@ import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+  site: 'https://memoryallocation.com',
+  output: "hybrid",
+  experimental: {
+    hybridOutput: true,
+  },
   adapter: netlify()
 });
