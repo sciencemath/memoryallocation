@@ -4,16 +4,17 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Contact Us!">
   <section>
+    <h1>Contact Us!</h1>
     <p>
       Do you have a good idea and want to turn it into an app or website?
       Please contact us below.
     </p>
-    <form method="post">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required />
+    <form method="post" data-netlify="true">
+      <label for="name">Name*</label>
+      <input placeholder="Full Name" type="text" id="name" name="name" required />
     
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
+      <label for="email">Email*</label>
+      <input placeholder="Email" type="email" id="email" name="email" required />
 
       <label for="reason">Reason for Contact</label>
       <textarea id="reason" name="reason"></textarea>
@@ -22,3 +23,26 @@ import Layout from "../layouts/Layout.astro";
     </form> 
   </section>
 </Layout>
+
+<style>
+ form {
+  grid-template-columns: 180px 300px;
+  display: grid;
+  align-items: center;
+ }
+ form > * {
+  margin: 0.5rem 0;
+ }
+ form > input {
+  padding: 0.5rem;
+ }
+ button {
+  grid-column: 2 / 3;
+  place-self: end;
+  color: #FFF;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: var(--button-primary-color);
+ }
+</style>
