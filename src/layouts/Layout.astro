@@ -1,4 +1,8 @@
 ---
+import githubIcon from '../icons/github.svg';
+import linkedInIcon from '../icons/linkedin.svg';
+import mastodonIcon from '../icons/mastodon.svg';
+
 export interface Props {
 	title: string;
 }
@@ -49,8 +53,9 @@ M       M   A     A
 			<slot />
 			<footer>
 				<ul>
-					<li>Linkedin SVG</li>
-					<li>Github SVG</li>
+					<li><a href="https://www.linkedin.com/in/binarymachine/" target="_blank"><img src={linkedInIcon} alt="linkedin social" /></a></li>
+					<li><a href="https://github.com/sciencemath" target="_blank"><img src={githubIcon} alt="github social" /></a></li>
+					<li><a href="https://mastodon.social/@uniqueid" target="_blank"><img src={mastodonIcon} alt="mastodon social" /></a></li>
 				</ul>
 				<p>&copy; 2023 memoryallocation</p>
 			</footer>
@@ -67,6 +72,9 @@ M       M   A     A
 	}
 	p {
 		margin: 0;
+	}
+	ul {
+		padding: 0;
 	}
 	a {
 		color: var(--text-color);
@@ -101,5 +109,13 @@ M       M   A     A
 		border-top: 1px solid white;
 		margin-top: 5rem;
 		grid-column: 1 / 3;
+		display: flex;
+		align-items: center;
+	}
+	footer ul {
+		display: flex;
+		gap: 0.5rem;
+		flex-grow: 1;
+		list-style: none;
 	}
 </style>
