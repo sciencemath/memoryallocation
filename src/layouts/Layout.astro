@@ -11,19 +11,16 @@ const { title } = Astro.props;
 
 const navItems = [
 	{
-		path: '/services',
-		label: 'Services',
-		logo: '👨🏻‍💻'
-	},
-	{
 		path: '/blog',
 		label: 'Blog',
-		logo: '📑'
+	},
+	{
+		path: '/services',
+		label: 'Services',
 	},
 	{
 		path: '/contact',
 		label: 'Contact',
-		logo: '📬'
 	}
 ]
 ---
@@ -108,10 +105,9 @@ M       M   A     A
 	nav {
 		display: inline-flex;
 		flex-direction: column;
-		gap: 1rem;
-		text-align: right;
+		gap: 0.7rem;
 		padding: 2rem;
-		text-transform: uppercase;
+		padding-left: 0; 
 	}
 	.content a {
 		text-decoration: none;
