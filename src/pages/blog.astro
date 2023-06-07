@@ -9,9 +9,9 @@ const blogPosts = await getCollection('blog');
   <section>
     {blogPosts.map((post) => (
       <div>
-        <h2>
-          <a href={`/blog/${post.slug}`}>{post.data.title}</a>  
-        </h2>  
+        <h5>
+          <a href={`/blog/${post.slug}`}>{post.data.title} &gt;&gt;</a>  
+        </h5>  
       </div>
     ))}
   </section>
