@@ -45,6 +45,9 @@ M       M   A     A
 	<body>
 		<div class="content">
 			<header>
+				<h1>
+					<a href="/">MA</a>
+				</h1>
 				<nav>{navItems.map((nav) => <a href={nav.path}>{nav.label}{' '}{nav.logo}</a>)}</nav>
 			</header>
 			<slot />
@@ -58,6 +61,7 @@ M       M   A     A
 					<p>&copy; 2023 memoryallocation</p>
 					<p><a href="mailto:matrixmachinelearning@gmail.com">matrixmachinelearning@gmail.com</a></p>
 				</div>
+				<a rel="me" href="https://mastodon.social/@uniqueid">Mastodon</a>
 			</footer>
 		</div>
 	</body>
@@ -91,12 +95,16 @@ M       M   A     A
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+		margin-bottom: 1rem;
+	}
 	.content {
 		max-width: 800px;
 		margin: 0 auto;
 		margin-top: 7rem;
 		display: grid;
-		grid-template-columns: 200px 1fr;
+		grid-template-columns: minmax(100px, 20%) 1fr;
 	}
 	header {
 		position: sticky;
@@ -106,8 +114,6 @@ M       M   A     A
 		display: inline-flex;
 		flex-direction: column;
 		gap: 0.7rem;
-		padding: 2rem;
-		padding-left: 0; 
 	}
 	.content a {
 		text-decoration: none;
@@ -125,5 +131,8 @@ M       M   A     A
 		gap: 0.5rem;
 		flex-grow: 1;
 		list-style: none;
+	}
+	footer > a {
+		visibility: hidden;
 	}
 </style>
