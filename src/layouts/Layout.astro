@@ -2,6 +2,7 @@
 import githubIcon from '../icons/github.svg';
 import linkedInIcon from '../icons/linkedin.svg';
 import mastodonIcon from '../icons/mastodon.svg';
+import kofi from '../icons/kofi.svg'
 
 export interface Props {
 	title: string;
@@ -46,9 +47,9 @@ Memory Allocation
 	<body>
 		<div class="content">
 			<header>
-				<h1>
+				<div class="small-logo">
 					<a href="/">MA</a>
-				</h1>
+				</div>
 				<nav>{navItems.map((nav) => <a href={nav.path}>{nav.label}{' '}{nav.logo}</a>)}</nav>
 			</header>
 			<slot />
@@ -57,6 +58,7 @@ Memory Allocation
 					<li><a href="https://www.linkedin.com/in/binarymachine/" target="_blank"><img src={linkedInIcon} alt="linkedin social" /></a></li>
 					<li><a href="https://github.com/sciencemath" target="_blank"><img src={githubIcon} alt="github social" /></a></li>
 					<li><a href="https://mastodon.social/@uniqueid" target="_blank"><img src={mastodonIcon} alt="mastodon social" /></a></li>
+					<li><a href="https://ko-fi.com/mathiasmath" target="_blank"><img src={kofi} alt="kofi social" /></a></li>
 				</ul>
 				<div>
 					<p>&copy; 2023 memoryallocation</p>
@@ -111,6 +113,11 @@ Memory Allocation
 		position: sticky;
 		align-self: start;
 	}
+	.small-logo {
+		font-weight: bolder;
+		font-size: 2rem;
+		margin-bottom: 1.1rem;
+	}
 	nav {
 		display: inline-flex;
 		flex-direction: column;
@@ -129,7 +136,7 @@ Memory Allocation
 	}
 	footer ul {
 		display: flex;
-		gap: 0.5rem;
+		gap: 0.8rem;
 		flex-grow: 1;
 		list-style: none;
 	}
