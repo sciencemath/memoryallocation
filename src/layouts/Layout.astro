@@ -22,6 +22,10 @@ const navItems = [
 	{
 		path: '/contact',
 		label: 'Contact',
+	},
+	{
+		path: '/books',
+		label: 'Books'
 	}
 ]
 ---
@@ -50,7 +54,7 @@ Memory Allocation
 			gtag('js', new Date());
 
 			gtag('config', 'G-K5K954LXC2');
-		</script>
+		</script> 
 	</head>
 	<body>
 		<div class="content">
@@ -62,17 +66,18 @@ Memory Allocation
 			</header>
 			<slot />
 			<footer>
-				<ul>
-					<li><a href="https://www.linkedin.com/in/binarymachine/" target="_blank"><img src={linkedInIcon} alt="linkedin social" /></a></li>
-					<li><a href="https://github.com/sciencemath" target="_blank"><img src={githubIcon} alt="github social" /></a></li>
-					<li><a href="https://mastodon.social/@uniqueid" target="_blank"><img src={mastodonIcon} alt="mastodon social" /></a></li>
-					<li><a href="https://ko-fi.com/mathiasmath" target="_blank"><img src={kofi} alt="kofi social" /></a></li>
-				</ul>
-				<div>
-					<p>&copy; 2023 memoryallocation</p>
-					<p><a href="mailto:matrixmachinelearning@gmail.com">matrixmachinelearning@gmail.com</a></p>
+				<div class="footer-content">
+					<ul>
+						<li><a href="https://www.linkedin.com/in/binarymachine/" target="_blank"><img src={linkedInIcon} alt="linkedin social" /></a></li>
+						<li><a href="https://github.com/sciencemath" target="_blank"><img src={githubIcon} alt="github social" /></a></li>
+						<li><a href="https://mastodon.social/@uniqueid" target="_blank"><img src={mastodonIcon} alt="mastodon social" /></a></li>
+						<li><a href="https://ko-fi.com/mathiasmath" target="_blank"><img src={kofi} alt="kofi social" /></a></li>
+					</ul>
+					<div>
+						<p><a href="mailto:matrixmachinelearning@gmail.com">matrixmachinelearning@gmail.com</a></p>
+						<p>&copy; 2024 memoryallocation</p>
+					</div>
 				</div>
-				<a rel="me" href="https://mastodon.social/@uniqueid">Mastodon</a>
 			</footer>
 		</div>
 	</body>
@@ -90,6 +95,7 @@ Memory Allocation
 		margin: 0;
 	}
 	ul {
+		margin: 0;
 		padding: 0;
 	}
 	a {
@@ -138,17 +144,23 @@ Memory Allocation
 		text-decoration: underline;
 	}
 	footer {
+		text-align: right;
 		border-top: 1px solid white;
 		grid-column: 1 / 3;
-		margin-top: 5rem;
+		margin-top: 2rem;
 	}
 	footer ul {
 		display: flex;
-		gap: 0.8rem;
+		gap: 0.6rem;
 		flex-grow: 1;
 		list-style: none;
 	}
 	footer > a {
 		visibility: hidden;
+	}
+	.footer-content {
+		display: flex;
+		align-items: center;
+		margin-top: 0.5rem;
 	}
 </style>
