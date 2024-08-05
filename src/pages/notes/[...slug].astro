@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const notePosts = await getCollection('notes');
+
+  return notePosts.map((note) => ({
+    params: { slug: note.slug },
+    props: { note }
+  }));
+}
+
+const { note } = Astro.props;
+const { Content } = await note.render();
+---
+
+<Layout title={note.title}>
+  <section class="blog-content">
+    <h1>{note.data.title}</h1>
+    <Content />
+  </section>
+</Layout>
+
+<style>
+  .blog-content {
+    grid-column: 2 / 3;
+  }
+</style>
