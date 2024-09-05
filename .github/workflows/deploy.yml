@@ -25,5 +25,5 @@ jobs:
       - name: Build Website
         run: npm run build
 
-      - name: Deploy with rsync
-        run: rsync -avz ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.TARGET_DIRECTORY }}
+#      - name: Deploy with rsync
+#        run: rsync -avz ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.TARGET_DIRECTORY }}
