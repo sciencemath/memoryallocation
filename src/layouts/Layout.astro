@@ -1,10 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-
-import linkedInSVG from '../../public/icons/linkedin.svg';
-import githubSVG from '../../public/icons/github.svg'
-import mastodonSVG from '../../public/icons/mastodon.svg';
-import kofiSVG from '../../public/icons/kofi.svg'
 
 export interface Props {
 	title: string;
@@ -33,23 +27,23 @@ const navItems = [
 
 const socialIcons = [
 	{
-		img: linkedInSVG,
 		alt: 'linkedin social',
+		loc: '/icons/linkedin.svg',
 		url: 'https://www.linkedin.com/in/binarymachine/'
 	},
 	{
-		img: githubSVG,
 		alt: 'github social',
+		loc: '/icons/github.svg',
 		url: 'https://github.com/sciencemath'
 	},
 	{
-		img: mastodonSVG,
 		alt: 'mastodon social',
+		loc: '/icons/mastodon.svg',
 		url: 'https://mastodon.social/@uniqueid'
 	},
 	{
-		img: kofiSVG,
 		alt: 'kofi social',
+		loc: '/icons/kofi.svg',
 		url: 'https://ko-fi.com/mathiasmath'
 	}
 ]
@@ -96,7 +90,7 @@ Memory Allocation
 						{socialIcons.map((icon) => (
 							<li>
 								<a href={icon.url} target="_blank">
-									<Image src={icon.img} alt={icon.alt} />
+									<img src={icon.loc} alt={icon.alt} />
 								</a>
 							</li>
 						))}
