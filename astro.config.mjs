@@ -1,14 +1,10 @@
 import { defineConfig } from 'astro/config';
 
-import netlify from "@astrojs/netlify/functions";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://memoryallocation.com',
   output: "hybrid",
-  adapter: netlify({
-    features: {
-      assets: false
-    }
-  })
+  adapter: netlify(),
 });
