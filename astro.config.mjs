@@ -6,5 +6,9 @@ import netlify from "@astrojs/netlify/functions";
 export default defineConfig({
   site: 'https://memoryallocation.com',
   output: "hybrid",
-  adapter: netlify()
+  adapter: netlify({
+    features: {
+      assets: false
+    }
+  })
 });

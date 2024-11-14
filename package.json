@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/netlify": "^5.5.4",
     "astro": "^4.16.12",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "sharp": "^0.33.5"
   }
 }
