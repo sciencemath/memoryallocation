@@ -1,8 +1,10 @@
 ---
-import githubIcon from '../icons/github.svg';
-import linkedInIcon from '../icons/linkedin.svg';
-import mastodonIcon from '../icons/mastodon.svg';
-import kofi from '../icons/kofi.svg'
+import { Image } from 'astro:assets';
+
+import linkedInSVG from '../../public/icons/linkedin.svg';
+import githubSVG from '../../public/icons/github.svg'
+import mastodonSVG from '../../public/icons/mastodon.svg';
+import kofiSVG from '../../public/icons/kofi.svg'
 
 export interface Props {
 	title: string;
@@ -26,6 +28,29 @@ const navItems = [
 	{
 		path: '/books',
 		label: 'Books'
+	}
+]
+
+const socialIcons = [
+	{
+		img: linkedInSVG,
+		alt: 'linkedin social',
+		url: 'https://www.linkedin.com/in/binarymachine/'
+	},
+	{
+		img: githubSVG,
+		alt: 'github social',
+		url: 'https://github.com/sciencemath'
+	},
+	{
+		img: mastodonSVG,
+		alt: 'mastodon social',
+		url: 'https://mastodon.social/@uniqueid'
+	},
+	{
+		img: kofiSVG,
+		alt: 'kofi social',
+		url: 'https://ko-fi.com/mathiasmath'
 	}
 ]
 ---
@@ -68,13 +93,16 @@ Memory Allocation
 			<footer>
 				<div class="footer-content">
 					<ul>
-						<li><a href="https://www.linkedin.com/in/binarymachine/" target="_blank"><img src={linkedInIcon} alt="linkedin social" /></a></li>
-						<li><a href="https://github.com/sciencemath" target="_blank"><img src={githubIcon} alt="github social" /></a></li>
-						<li><a href="https://mastodon.social/@uniqueid" target="_blank"><img src={mastodonIcon} alt="mastodon social" /></a></li>
-						<li><a href="https://ko-fi.com/mathiasmath" target="_blank"><img src={kofi} alt="kofi social" /></a></li>
+						{socialIcons.map((icon) => (
+							<li>
+								<a href={icon.url} target="_blank">
+									<Image src={icon.img} alt={icon.alt} />
+								</a>
+							</li>
+						))}
 					</ul>
 					<div>
-						<p><a href="mailto:matrixmachinelearning@gmail.com">matrixmachinelearning@gmail.com</a></p>
+						<p><a href="mailto:autonomousmachine@gmail.com">autonomousmachine@gmail.com</a></p>
 						<p>&copy; 2024 memoryallocation</p>
 					</div>
 				</div>

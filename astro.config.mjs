@@ -6,8 +6,5 @@ import netlify from "@astrojs/netlify/functions";
 export default defineConfig({
   site: 'https://memoryallocation.com',
   output: "hybrid",
-  experimental: {
-    hybridOutput: true,
-  },
   adapter: netlify()
 });
