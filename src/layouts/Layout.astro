@@ -76,42 +76,48 @@ Memory Allocation
 		</script> 
 	</head>
 	<body>
+		<div class="rebecca">
+			in memory of:<br>
+			{`rebecca: { color: #663399 }`}
+		</div>
 		<div class="content">
-			<header>
-				<div class="small-logo">
-					<a href="/">MA</a>
-				</div>
-				<nav>{navItems.map((nav) => <a href={nav.path}>{nav.label}{' '}{nav.logo}</a>)}</nav>
-			</header>
-			<slot />
-			<footer>
-				<div class="footer-content">
-					<ul>
-						{socialIcons.map((icon) => (
-							<li>
-								<a href={icon.url} target="_blank">
-									<img src={icon.loc} alt={icon.alt} />
-								</a>
-							</li>
-						))}
-					</ul>
-					<div>
-						<p><a href="mailto:autonomousmachine@gmail.com">autonomousmachine@gmail.com</a></p>
-						<p>&copy; 2024 memoryallocation</p>
+			<div class="content-container">
+				<div class="portrait-container">
+					<img src="/images/portrait.jpeg" alt="Myself as a painting" />
+					<div class="social">
+						<ul>
+							{socialIcons.map((icon) => (
+								<li>
+									<a href={icon.url} target="_blank">
+										<img src={icon.loc} alt={icon.alt} />
+									</a>
+								</li>
+							))}
+						</ul>
 					</div>
 				</div>
-			</footer>
+				<div class="intro">
+					<p>Hey there! 👋</p><br />
+					<p>I'm a web and mobile developer based in the USA,and I specialize in creating custom websites and web applications that are not only functional but also beautiful and user-friendly. Whether it's building something from scratch or improving what you already have, I'm passionate about bringing your ideas to life!</p><br>
+					<p>When I'm not coding, you can usually find me enjoying sushi 🍣, diving into some interesting math problems, or exploring the great outdoors. 🌳</p><br>
+					<p>Right now, I’m open for new projects and collaborations, so feel free to drop me an email or connect with me on social media. Let's make something awesome together! 😄</p>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
 <style is:global>
 	:root {
-		--text-color: #adbac7;
-		--background-color: rgb(17 24 39);
+		--text-color: #ccd3d9;
+		/* --background-color: rgb(17 24 39); */
+		--background-color: #663399;
 		--button-primary-color: #1e242c;
 	}
 	* {
 		box-sizing: border-box;
+	}
+	.rebecca {
+		font-size: 9px;
 	}
 	p {
 		margin: 0;
@@ -130,6 +136,10 @@ Memory Allocation
 		height: 100vh;
 		background-color: var(--background-color);
 	}
+	body {
+		margin: 0;
+		padding: 0;
+	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
@@ -139,11 +149,43 @@ Memory Allocation
 		margin-bottom: 1rem;
 	}
 	.content {
-		max-width: 800px;
-		margin: 0 auto;
-		margin-top: 5rem;
-		display: grid;
-		grid-template-columns: minmax(100px, 20%) 1fr;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: calc(100vh - 100px);
+	}
+	.content-container {
+		display: flex;
+		gap: 1rem;
+		padding: 20px;
+		border: 1px solid #949494;
+		background-color: #571b9580;
+		-webkit-box-shadow: 0px 0px 10px -4px rgba(255,255,255,1);
+		-moz-box-shadow: 0px 0px 10px -4px rgba(255,255,255,1);
+		box-shadow: 0px 0px 10px -4px rgba(255,255,255,1);
+	}
+	.intro {
+		max-width: 350px;
+		min-width: 350px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 2%;
+		font-size: 0.9rem;
+		color: #d4d4d4;
+	}
+	.portrait-container img {
+		border-radius: 5%;
+		max-width: 350px;
+		mix-blend-mode: luminosity;
+	}
+	.social ul {
+		display: flex;
+		justify-content: space-evenly;
+		list-style: none;
+		padding: 0;
+		margin: 0;
 	}
 	header {
 		position: sticky;
