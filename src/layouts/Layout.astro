@@ -42,6 +42,11 @@ const socialIcons = [
 		url: 'https://mastodon.social/@uniqueid'
 	},
 	{
+		alt: 'email',
+		loc: '/icons/email.svg',
+		url: 'mailto:autonomousmachine@gmail.com'
+	},
+	{
 		alt: 'kofi social',
 		loc: '/icons/kofi.svg',
 		url: 'https://ko-fi.com/mathiasmath'
@@ -78,12 +83,13 @@ Memory Allocation
 	<body>
 		<div class="rebecca">
 			in memory of:<br>
-			{`rebecca: { color: #663399 }`}
+			{`rebecca: { color: #663399 }`}<br>
+			💜<a href="https://meyerweb.com/eric/thoughts/2014/06/19/rebeccapurple/" target="_blank">rebeccapurple</a>
 		</div>
 		<div class="content">
 			<div class="content-container">
 				<div class="portrait-container">
-					<img src="/images/portrait.jpeg" alt="Myself as a painting" />
+					<img class="portrait" src="/images/portrait.jpeg" alt="Myself as a painting" />
 					<div class="social">
 						<ul>
 							{socialIcons.map((icon) => (
@@ -98,9 +104,9 @@ Memory Allocation
 				</div>
 				<div class="intro">
 					<p>Hey there! 👋</p><br />
-					<p>I'm a web and mobile developer based in the USA,and I specialize in creating custom websites and web applications that are not only functional but also beautiful and user-friendly. Whether it's building something from scratch or improving what you already have, I'm passionate about bringing your ideas to life!</p><br>
-					<p>When I'm not coding, you can usually find me enjoying sushi 🍣, diving into some interesting math problems, or exploring the great outdoors. 🌳</p><br>
-					<p>Right now, I’m open for new projects and collaborations, so feel free to drop me an email or connect with me on social media. Let's make something awesome together! 😄</p>
+					<p>I'm a web and mobile developer based in the USA 🇺🇸, specializing in creating custom websites and web applications that are both functional and beautiful. Whether you're looking to build something from the ground up or improve your current setup, I’m passionate about turning ideas into reality. I also enjoy mentoring and helping others learn along the way!</p><br>
+					<p>Outside of coding, I’m usually indulging in sushi 🍣, solving math puzzles, or exploring the outdoors 🌳.</p><br>
+					<p>I'm currently open to new projects and collaborations, so feel free to reach out via email or connect with me on social media. Let’s build something amazing together! 😄</p>
 				</div>
 			</div>
 		</div>
@@ -158,19 +164,21 @@ Memory Allocation
 		display: flex;
 		gap: 1rem;
 		padding: 20px;
-		border: 1px solid #949494;
+		padding-bottom: 0.9rem;
+		border: 0.5px solid white;
+		border-radius: 0.5rem;
 		background-color: #571b9580;
 		-webkit-box-shadow: 0px 0px 10px -4px rgba(255,255,255,1);
 		-moz-box-shadow: 0px 0px 10px -4px rgba(255,255,255,1);
 		box-shadow: 0px 0px 10px -4px rgba(255,255,255,1);
 	}
 	.intro {
+		line-height: 1.06rem;
 		max-width: 350px;
 		min-width: 350px;
 		padding-top: 10px;
-		padding-bottom: 10px;
 		padding-left: 10px;
-		padding-right: 10px;
+		padding-right: 25px;
 		border-radius: 2%;
 		font-size: 0.9rem;
 		color: #d4d4d4;
@@ -180,11 +188,24 @@ Memory Allocation
 		max-width: 350px;
 		mix-blend-mode: luminosity;
 	}
+	.portrait-container .portrait {
+		border: 1px solid white;
+	}
+	.portrait-container a {
+		color:red;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    transition: background-color 1s;
+	}
+	.portrait-container a:hover {
+		mix-blend-mode: plus-lighter;
+	}
 	.social ul {
 		display: flex;
 		justify-content: space-evenly;
 		list-style: none;
-		padding: 0;
+		padding-top: 8px;
 		margin: 0;
 	}
 	header {
